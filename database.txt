@@ -1,0 +1,113 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 18, 2021 at 12:24 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.7
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `zenevia`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `code` varchar(18) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(130) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL,
+  `sub_category_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `price` decimal(18,2) NOT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `thum_image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `discount` decimal(18,2) DEFAULT NULL,
+  `size_id` int(3) DEFAULT NULL,
+  `color_id` int(3) DEFAULT NULL,
+  `short_details` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_featured` varchar(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_offer` varchar(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `save_by` varchar(3) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `update_by` varchar(3) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ip_address` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `code`, `name`, `slug`, `category_id`, `sub_category_id`, `price`, `image`, `thum_image`, `discount`, `size_id`, `color_id`, `short_details`, `description`, `is_featured`, `is_offer`, `status`, `save_by`, `update_by`, `ip_address`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 'P000001', 'Silky Saree', 'silky-saree-1636428052', 1, NULL, '1200.00', 'p-16364280526189e91448435bg17-131_2_.jpg', 'thumb-16364280526189e9144843bbg17-131_2_.jpg', NULL, 0, 0, '<p>Women Clothing Sliky Saree for comfortab le</p>', NULL, '1', '0', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:09:31', '2021-11-08 21:20:52', '2021-11-18 05:09:31'),
+(2, 'P000002', 'Sliky Saree', 'sliky-saree-1636428165', 1, NULL, '1300.00', 'p-16364281656189e98590e15free-chainlacesaree-qvidya-unstitched-original-imag4nzvhhybn8df.jpeg', 'thumb-16364281656189e98590e1afree-chainlacesaree-qvidya-unstitched-original-imag4nzvhhybn8df.jpeg', NULL, 0, 0, '<p>Sliky saree for women comfortable for every girls</p>', NULL, '1', '0', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:12:15', '2021-11-08 21:22:45', '2021-11-18 05:12:15'),
+(3, 'P000003', 'Saree', 'saree-1636515435', 1, NULL, '1400.00', 'p-1636515420618b3e5c26b33banarasi-saree-in-teal-blue-and-golden-v1-snga2851.jpg', 'thumb-1636515420618b3e5c26b39banarasi-saree-in-teal-blue-and-golden-v1-snga2851.jpg', NULL, 0, 0, '<p>Here description</p>', '<p>&nbsp;dsfsdf</p>', '1', '1', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:10:15', '2021-11-09 21:37:00', '2021-11-18 05:10:15'),
+(4, 'P000004', 'Man\'s T-Sirt', 'mans-t-sirt-1636525779', 4, NULL, '700.00', 'p-1636525779618b66d38e331man-1.jpg', 'thumb-1636525779618b66d38e336man-1.jpg', NULL, 0, 0, '<p>Man\'s T-Sirt</p>', NULL, '1', '0', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:10:10', '2021-11-10 00:29:40', '2021-11-18 05:10:10'),
+(5, 'P000005', 'Man\'s T-Sirt', 'mans-t-sirt-1636525913', 4, NULL, '800.00', 'p-1636525913618b67598570810512-036_1.jpg', 'thumb-1636525913618b67598570d10512-036_1.jpg', NULL, NULL, NULL, '<p>Man\'s T-Sirt</p>', '<p>Man\'s T-Sirt</p>', '1', '0', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:12:49', '2021-11-10 00:31:53', '2021-11-18 05:12:49'),
+(6, 'P000006', 'Man\'s  T-Sirt for Smart', 'mans-t-sirt-for-smart-1636526187', 4, NULL, '950.00', 'p-1636526187618b686b09decgraphic-tshirt-1.jpg', 'thumb-1636526187618b686b09df4graphic-tshirt-1.jpg', NULL, 0, 0, '<p>Man\'s T-Sirt</p>', '<p>Man\'s T-Sirt</p>', '1', '0', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:09:24', '2021-11-10 00:36:27', '2021-11-18 05:09:24'),
+(7, 'P000007', 'Baby Toy', 'baby-toy-1636554128', 8, NULL, '350.00', 'p-1636554128618bd59076a35download (2).jpeg', 'thumb-1636554128618bd59076a3bdownload (2).jpeg', NULL, NULL, NULL, '<p>Baby Toy</p>', '<p>Baby Toy</p>', '0', '0', 'A', '1', NULL, '127.0.0.1', NULL, '2021-11-10 08:22:08', '2021-11-10 08:22:08'),
+(8, 'P000008', 'Baby Toy', 'baby-toy-1636554164', 8, NULL, '750.00', 'p-1636554164618bd5b4acf1cimages (4).jpeg', 'thumb-1636554164618bd5b4acf22images (4).jpeg', NULL, NULL, NULL, '<p>Baby Toy</p>', '<p>Baby Toy</p>', '0', '0', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:09:18', '2021-11-10 08:22:44', '2021-11-18 05:09:18'),
+(9, 'P000009', 'Babby Dolls', 'babby-dolls-1636554201', 8, NULL, '720.00', 'p-1636554201618bd5d94b42771hAFq3qHoL._AC_SX425_.jpg', 'thumb-1636554201618bd5d94b42c71hAFq3qHoL._AC_SX425_.jpg', NULL, 0, 0, '<p>Baby Toy</p>', '<p>Baby Toy</p>', '1', '0', 'A', '1', NULL, '127.0.0.1', NULL, '2021-11-10 08:23:21', '2021-11-10 08:23:21'),
+(10, 'P000010', 'Baby Toy', 'baby-toy-1636554360', 4, NULL, '450.00', 'p-1636554360618bd678f0243download (3).jpeg', 'thumb-1636554360618bd678f0248download (3).jpeg', NULL, 0, 0, '<p>Baby Toy</p>', '<p>Baby Toy</p>', '0', '0', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:05:39', '2021-11-10 08:26:01', '2021-11-18 05:05:39'),
+(11, 'P000011', 'Baby Toy s', 'baby-toy-s-1636554387', 4, NULL, '350.00', 'p-1636554387618bd693468ebdownload (4).jpeg', 'thumb-1636554387618bd693468f1download (4).jpeg', NULL, NULL, NULL, '<p>Baby Toy</p>', '<p>Baby Toy</p>', '0', '1', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:05:27', '2021-11-10 08:26:27', '2021-11-18 05:05:27'),
+(12, 'P000012', 'Baby Toy Big', 'baby-toy-big-1636554410', 4, NULL, '450.00', 'p-1636554410618bd6aa8a82bimages (6).jpeg', 'thumb-1636554410618bd6aa8a830images (6).jpeg', NULL, 0, 0, '<p>Baby Toy</p>', '<p>Baby Toy</p>', '0', '1', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:05:23', '2021-11-10 08:26:50', '2021-11-18 05:05:23'),
+(13, 'P000013', 'Home & Cleaning Product', 'home-cleaning-product-1636555321', 8, NULL, '500.00', 'p-1636555321618bda39c23cddfihsaiz4pcxaianmzed.jpg', 'thumb-1636555321618bda39c23d2dfihsaiz4pcxaianmzed.jpg', NULL, 0, 0, '<p>Home &amp; Cleaning Product</p>', '<p>Home &amp; Cleaning Product</p>', '0', '0', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:05:20', '2021-11-10 08:42:01', '2021-11-18 05:05:20'),
+(14, 'P000014', 'Home & Cleaning Product', 'home-cleaning-product-1636555342', 8, NULL, '450.00', 'p-1636555342618bda4eec31aWhy-you-should-you-hire-professional-cleaning-services-while-moving-out-FB-1200x700-compressed.jpg', 'thumb-1636555342618bda4eec31fWhy-you-should-you-hire-professional-cleaning-services-while-moving-out-FB-1200x700-compressed.jpg', NULL, 0, 0, '<p>Home &amp; Cleaning Product</p>', '<p>Home &amp; Cleaning Product</p>', '0', '1', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:05:16', '2021-11-10 08:42:23', '2021-11-18 05:05:16'),
+(15, 'P000015', 'Home & Cleaning Product', 'home-cleaning-product-1636555360', 8, NULL, '450.00', 'p-1636555360618bda603c6dacontent-1img.2106251233177.jpg', 'thumb-1636555360618bda603c6e0content-1img.2106251233177.jpg', NULL, 0, 0, '<p>Home &amp; Cleaning Product</p>', '<p>Home &amp; Cleaning Product</p>', '0', '0', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:05:31', '2021-11-10 08:42:40', '2021-11-18 05:05:31'),
+(16, 'P000016', 'Home & Cleaning Product', 'home-cleaning-product-1636555423', 8, NULL, '410.00', 'p-1636555423618bda9f3a140images (8).jpeg', 'thumb-1636555423618bda9f3a146images (8).jpeg', '20.00', 0, 0, '<p>Home &amp; Cleaning Product</p>', '<p>Home &amp; Cleaning Product</p>', '0', '1', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:05:36', '2021-11-10 08:43:43', '2021-11-18 05:05:36'),
+(17, 'P000017', 'Home & Cleaning Product', 'home-cleaning-product-1636555837', 8, NULL, '320.00', 'p-1636555837618bdc3db7748images (8).jpeg', 'thumb-1636555837618bdc3db774dimages (8).jpeg', NULL, NULL, NULL, '<p>Home &amp; Cleaning Product</p>', NULL, '0', '1', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:05:44', '2021-11-10 08:50:37', '2021-11-18 05:05:44'),
+(18, 'P000018', 'Home & Cleaning Product', 'home-cleaning-product-1636609523', 6, 1, '150.00', 'p-1636555890618bdc720a92bimages (9).jpeg', 'thumb-1636555890618bdc720a930images (9).jpeg', NULL, 0, 0, '<p>Home &amp; Cleaning Product</p>', '<p>Home &amp; Cleaning Product</p>', NULL, '1', 'A', '1', NULL, '127.0.0.1', NULL, '2021-11-10 08:51:30', '2021-11-10 23:45:23'),
+(19, 'P000019', 'sdfsd f', 'sdfsd-f-1636613949', 1, NULL, '4000.00', 'p-1636613949618cbf3d2b109istockphoto-1277055062-170667a (1).jpg', 'thumb-1636613949618cbf3d2b10fistockphoto-1277055062-170667a (1).jpg', NULL, NULL, NULL, '<p>&nbsp;sdfsdf</p>', NULL, '0', '0', 'A', '1', NULL, '127.0.0.1', NULL, '2021-11-11 00:59:09', '2021-11-11 00:59:09'),
+(20, 'P000020', 'Panjabi', 'panjabi-1636629689', 13, NULL, '450.00', 'p-1636629689618cfcb9aabb927a3f3ba196d91b93553a615382b347e.jpg', 'thumb-1636629689618cfcb9aabc127a3f3ba196d91b93553a615382b347e.jpg', NULL, NULL, NULL, '<p>Text mining, also referred to as text data mining, similar to text analytics, is the process of deriving <strong>high-quality information from</strong> text. ... High-quality information is typically obtained by devising patterns and trends by means such as statistical pattern learning.</p>', '<p>Text mining, also referred to as text data mining, similar to text analytics, is the process of deriving <strong>high-quality information from</strong> text. ... High-quality information is typically obtained by devising patterns and trends by means such as statistical pattern learning.</p>', '0', '0', 'A', '1', NULL, '127.0.0.1', NULL, '2021-11-11 05:21:30', '2021-11-11 05:21:30'),
+(21, 'P000021', 'Panjabi', 'panjabi-1636629770', 13, NULL, '450.00', 'p-1636629770618cfd0a9fdf7d68a5113c7eaf91f5d9a5b7bfa97290a.jpg', 'thumb-1636629770618cfd0a9fdfcd68a5113c7eaf91f5d9a5b7bfa97290a.jpg', NULL, NULL, NULL, '<p>Text mining, also referred to as text data mining, similar to text analytics, is the process of deriving <strong>high-quality information from</strong> text. ... High-quality information is typically obtained by devising patterns and trends by means such as statistical pattern learning.</p>', NULL, '0', '0', 'A', '1', NULL, '127.0.0.1', NULL, '2021-11-11 05:22:50', '2021-11-11 05:22:50'),
+(22, 'P000022', 'Panjabi', 'panjabi-1636629825', 13, NULL, '400.00', 'p-1636629825618cfd4103b25download.jpeg', 'thumb-1636629825618cfd4103b2adownload.jpeg', NULL, NULL, NULL, '<p>Text mining, also referred to as text data mining, similar to text analytics, is the process of deriving <strong>high-quality information from</strong> text.</p>', NULL, '0', '0', 'A', '1', NULL, '127.0.0.1', NULL, '2021-11-11 05:23:45', '2021-11-11 05:23:45'),
+(23, 'P000023', 'Walton Max-Pro 500', 'walton-max-pro-500-1636868738', 14, NULL, '12000.00', 'p-16368687386190a28273a4597036a3ef3b60f99a34cf0e16fb867896146a6e2.jpeg', 'thumb-16368687386190a28273a4b97036a3ef3b60f99a34cf0e16fb867896146a6e2.jpeg', '10.00', 0, 0, '<p>&nbsp;sdfsdf</p>', NULL, '0', '1', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:04:47', '2021-11-13 23:45:38', '2021-11-18 05:04:47'),
+(24, 'P000024', 'Walton Max-Pro 500', 'walton-max-pro-500-1637233405', 11, NULL, '15000.00', 'p-16368688256190a2d9a06ccproduct-vision1-pro-magic-blue-01-600x600.png', 'thumb-16368688256190a2d9a06d1product-vision1-pro-magic-blue-01-600x600.png', '10.00', NULL, NULL, '<p>&nbsp;sdfsdfsd</p>', NULL, NULL, '1', 'A', '1', NULL, '127.0.0.1', '2021-11-18 05:04:25', '2021-11-13 23:47:05', '2021-11-18 05:04:25'),
+(25, 'P000025', 'Samsung Max Pro', 'samsung-max-pro-1637232531', 14, NULL, '13000.00', 'p-16368701796190a82343de097036a3ef3b60f99a34cf0e16fb867896146a6e2.jpeg', 'thumb-16368701796190a82343de697036a3ef3b60f99a34cf0e16fb867896146a6e2.jpeg', '50.00', NULL, NULL, '<p>Samsung Max Pro&nbsp;</p>', NULL, NULL, '1', 'A', '1', NULL, '127.0.0.1', NULL, '2021-11-14 00:09:39', '2021-11-18 04:48:51');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `products_category_id_foreign` (`category_id`),
+  ADD KEY `products_sub_category_id_foreign` (`sub_category_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `products`
+--
+ALTER TABLE `products`
+  ADD CONSTRAINT `products_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `products_sub_category_id_foreign` FOREIGN KEY (`sub_category_id`) REFERENCES `sub_categories` (`id`) ON DELETE CASCADE;
+COMMIT;
