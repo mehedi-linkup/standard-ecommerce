@@ -145,11 +145,11 @@ Route::get('/login',[AuthController::class, 'loginShow'])->name('login');
 
 
 Route::post('/login',[AuthController::class, 'authCheck'])->name('login.check');
-Route::get('/otp',[AuthController::class, 'otp'])->name('login.otp');
-Route::post('/otp',[AuthController::class, 'otpCheck'])->name('otp.check');
+// Route::get('/otp',[AuthController::class, 'otp'])->name('login.otp');
+// Route::post('/otp',[AuthController::class, 'otpCheck'])->name('otp.check');
 
 
-Route::group(['middleware' => ['auth','userLoginCheck']] , function(){
+// Route::group(['middleware' => ['auth','userLoginCheck']], function(){
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::get('/invoice/{id}',[InvoiceController::class, 'invoice'])->name('invoice.admin');
@@ -425,7 +425,7 @@ Route::group(['middleware' => ['auth','userLoginCheck']] , function(){
         // Public message route 
         Route::get('/feedback',[PublicMessageController::class,'index'])->name('public.sms')->middleware('check');
 
-});
+// });
 
    
 
